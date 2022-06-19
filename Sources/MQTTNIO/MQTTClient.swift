@@ -18,6 +18,7 @@ import Combine
 /// If configured with `.retry` as the reconnect mode, the client will automatically
 /// reconnect in case of a connection failure. Any published message will be retried after reconnection.
 /// `whenConnected` and `whenDisconnected` can be used to receive callbacks for changes in the connection.
+@available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 public class MQTTClient: MQTTConnectionDelegate, MQTTSubscriptionsHandlerDelegate {
     
     // MARK: - Vars
@@ -81,19 +82,19 @@ public class MQTTClient: MQTTConnectionDelegate, MQTTSubscriptionsHandlerDelegat
     private let messageCallbacks: CallbackList<MQTTMessage>
     
     #if canImport(Combine)
-    @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    //@available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
     private lazy var connectSubject: PassthroughSubject<MQTTConnectResponse, Never>! = { nil }()
     
-    @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    //@available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
     private lazy var reconnectSubject: PassthroughSubject<Void, Never>! = { nil }()
     
-    @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    //@available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
     private lazy var disconnectSubject: PassthroughSubject<MQTTDisconnectReason, Never>! = { nil }()
     
-    @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    //@available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
     private lazy var connectionFailureSubject: PassthroughSubject<Error, Never>! = { nil }()
     
-    @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    //@available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
     private lazy var messageSubject: PassthroughSubject<MQTTMessage, Never>! = { nil }()
     #endif
     
