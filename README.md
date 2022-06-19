@@ -13,7 +13,7 @@ This library has support for WebSocket connections and TLS. It runs on all platf
 Use the SPM string to easily include the dependendency in your Package.swift file.
 
 ```swift
-.package(url: "https://github.com/sroebert/mqtt-nio.git", from: "2.0.0")
+.package(url: "https://github.com/chepil/mqtt-nio.git", from: "2.0.0")
 ```
 
 ## Supported Platforms
